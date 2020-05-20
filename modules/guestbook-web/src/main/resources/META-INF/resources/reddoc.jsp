@@ -32,7 +32,7 @@
 	        // initializeRedoc('xpo', './GFF.json', {});
 	        /**/
 	        
-	        initializeRedoc('reddocContainer', '<c:url value="/" /><c:out value="${assetId}" />.json', {});
+	        initializeRedoc('reddocContainer', '<c:url value="/api-json/" /><c:out value="${assetId}" />.json', {});
 	        //initializeRedoc('reddocContainer', '/o/com.liferay.docs.guestbook.portlet/create-order-api.json', {});
 	         
 	    </script>

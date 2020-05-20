@@ -56,7 +56,7 @@
             var ui = SwaggerUIBundle({
                 
                 //url: "/o/com.liferay.docs.guestbook.portlet/create-order-api.json",
-                url: '<c:url value="/" />'+'<c:out value="${assetId}" />'+'.json',
+                url: '<c:url value="/api-json/" />'+'<c:out value="${assetId}" />'+'.json',
 
                 urlHeaders: {
                     //"Authorization": "@ViewBag.authorization"
