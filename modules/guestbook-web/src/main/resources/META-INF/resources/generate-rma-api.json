@@ -1,0 +1,51 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Generate RMA API",
+    "description": "To generate RMA against returnable item(s).  ",
+    "version": "V1"
+  },
+  "host": "anypoint.mulesoft.com",
+  "basePath": "/mocking/api/v1/links/e3f767ce-c9cd-4937-abde-bdb65652f43e/",
+  "schemes": [
+    "http"
+  ],
+  "externalDocs": {
+    "url": "http://",
+    "description": "To generate RMA against returnable item(s).  \n",
+    "x-amf-title": "Generate RMA API"
+  },
+  "paths": {
+    "/generateRMA": {
+      "get": {
+        "operationId": "GenerateRMA",
+        "description": "To generate RMA against returnable item(s).  ",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Success!!!",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            },
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Your RMA number (20200415-001) has been genearted.",
+              "example": {
+                "strict": true,
+                "value": {
+                  "RMA": "20200415-001"
+                }
+              },
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

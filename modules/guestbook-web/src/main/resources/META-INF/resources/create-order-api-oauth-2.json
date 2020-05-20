@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Create Order API-OAuth-2",
+    "version": "v1"
+  },
+  "host": "create-order-api-oauth-2.us-e2.cloudhub.io",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/create-order": {
+      "post": {
+        "operationId": "create-order",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "example": {
+                "orderId": "1234",
+                "orderDate": "2020-03-22",
+                "purchaseAmount": "150.00",
+                "currencyCode": "USD",
+                "customerName": "Nick Rimando",
+                "customerAddress": "California",
+                "customerMobile": "9717395464"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "200",
+                "message": "Order Created Successfully"
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "500",
+                "message": "Internal Server Error"
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "401",
+                "message": "Unauthorized or 403 Forbidden - Authentication errors."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-order/{orderId}": {
+      "x-amf-description": "Get order by passing the order id as querystring",
+      "get": {
+        "operationId": "get-order/{orderId}",
+        "parameters": [
+          {
+            "name": "orderId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "orderId": "1234",
+                "orderDate": "2020-03-22",
+                "purchaseAmount": "150.00",
+                "currencyCode": "USD",
+                "customerName": "Nick Rimando",
+                "customerAddress": "California",
+                "customerMobile": "9717395464"
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "401",
+                "message": "Unauthorized or 403 Forbidden - Authentication errors."
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "404",
+                "message": "Order not found"
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "500",
+                "message": "Internal Server Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-orders": {
+      "x-amf-description": "Get all orders",
+      "get": {
+        "operationId": "get-orders",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": [
+                {
+                  "orderId": "1234",
+                  "orderDate": "2020-03-22",
+                  "purchaseAmount": "150.00",
+                  "currencyCode": "USD",
+                  "customerName": "Nick Rimando",
+                  "customerAddress": "California",
+                  "customerMobile": "9717395464"
+                },
+                {
+                  "orderId": "9807",
+                  "orderDate": "2020-03-22",
+                  "purchaseAmount": "200.00",
+                  "currencyCode": "USD",
+                  "customerName": "Julian Green",
+                  "customerAddress": "London",
+                  "customerMobile": "9807654310"
+                }
+              ]
+            }
+          },
+          "401": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "401",
+                "message": "Unauthorized or 403 Forbidden - Authentication errors."
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "500",
+                "message": "Internal Server Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

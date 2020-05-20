@@ -1,0 +1,467 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Create Order  demonstration with API Key Authentication.",
+    "version": "1.0",
+    "title": "Create Order (API Key)"
+  },
+  "host": "api-dev.lm.xpo.com",
+  "basePath": "/Irispoc/rest/V1/CreateOrder",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/Cargo": {
+      "post": {
+        "tags": [
+          "Cargo"
+        ],
+        "summary": "Create Order (API Key) ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ApiCargowiseCreateOrderwithlabelPost - Request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ApiCargowiseCreateOrderwithlabelPostRequest"
+            }
+          },
+          {
+            "in": "header",
+            "name": "x-api-key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ApiCargowiseCreateOrderwithlabelPostResponse"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "413": {
+            "$ref": "#/responses/413"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          },
+          "503": {
+            "$ref": "#/responses/503"
+          },
+          "522": {
+            "$ref": "#/responses/522"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        },
+        "x-code-samples": [
+          {
+            "lang": "C#",
+            "source": "\r\n var client = new RestClient('https://api-dev.lm.xpo.com/irispoc/rest/v1/CreateOrderOAuth/Cargo/');\r\n\r\n var request = new RestRequest(Method.POST);\r\n\r\n request.AddHeader('postman-token', 'b1c3d564-9005-f2b2-c44e-7593567ed50a');\r\n\r\n request.AddHeader('cache-control', 'no-cache');\r\n\r\n request.AddHeader('token', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkU1OEQ3N0M3MEE2MkRCMUQwMDYwODRCNUNCREI0QkVBMUJGRjhGM0YiLCJ0eXAiOiJKV1QiLCJ4NXQiOiI1WTEzeHdwaTJ4MEFZSVMxeTl0TDZodl9qejgifQ.eyJuYmYiOjE1ODU1NTI1ODEsImV4cCI6MTU4NTU1OTc4MSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi1zYW5kYm94LmF1dGh4cG8uY29tIiwiYXVkIjpbImh0dHBzOi8vbG9naW4tc2FuZGJveC5hdXRoeHBvLmNvbS9yZXNvdXJjZXMiLCJ4cG8tcmF0ZXMtYXBpIl0sImNsaWVudF9pZCI6Inhwby1rcmFmdC1oZWluei1pbnRlZ3JhdGlvbiIsInNjb3BlIjpbInhwby1yYXRlcy1hcGkiXX0.NApIxCwAMKA9PtZ5Opbcj7ZvsNh_praJOZdTNBByxYzo2n4xwqH2KrA15jt_lHU_xrGkNZmmLDkrjpU4JCHjfw1xXD3oTh5BUsmEN1ErOpfSnagwPkZpY-LuAuDm55rQHvxxEeSIWdXuwM98wVZc8VbGc9N4bEaNlWXmJXm6UXicgC3rCmwVm3ukNainpR7B24MMDfxPTGB94p4MllCpT-dlVm_1BKrkYnHI_Zz_WKwQ8vgsIfDWVWG3NAXHrGmys6LZmnb6Somu7rv5AdcW29N4hDyPoXKCnCJcEtypdGMeAijR9tK1cN1bM40EJ_bAIYYVn_xdriffgDBBUekE4g');\r\n\r\n request.AddHeader('x-api-key', '6cd15962-94b6-411a-8f5c-3bbd06b70673');\r\n\r\n request.AddParameter('undefined', '{\r\n'Application': 1,\r\n\t'XpoCustomerId':'HITPRODEN',\r\n\t'orderDetails': {\r\n\t\t'ContainerMode': 'LCL',\r\n\t\t'number': 'TESTORDERVAL12',\r\n\t\t'Date': null,\r\n\t\t'confirmNumber': 'TESTORDERVAL1',\r\n\t\t'invoiceDate': '2020-02-13T12:08:09',\r\n\t\t'invoiceNumber': 'TESTORDERVAL1',\r\n\t\t'goodsDescription': 'test goods description',\r\n\t\t'currency': 'USD',\r\n\t\t'transportMode': 'SEA',\r\n\t\t'CountryOfOrigin': 'US'\r\n\t},\r\n\t'buyer': {\r\n\t\t'organizationCode': 'GARUSAWTG',\r\n\t\t'addressCode': '360 W Plant St Ste 203',\r\n\t\t'Name': 'GARMCO USA Inc.',\r\n\t\t'Address1': '360 W Plant St Ste 203',\r\n\t\t'Address2': '',\r\n\t\t'City': 'Winter Garden',\r\n\t\t'State': 'WI',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '34787',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+1 414-436-3262',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'supplier': {\r\n\t\t'organizationCode': 'HITPRODEN',\r\n\t\t'addressCode': '7150 BRYAN DAIRY ROAD',\r\n\t\t'Name': 'HIT PROMOTIONAL PRODUCTS INC',\r\n\t\t'Address1': '7150 BRYAN DAIRY RD',\r\n\t\t'Address2': '',\r\n\t\t'City': 'LARGO',\r\n\t\t'State': 'FL',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '33777-1501',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+33777-1501',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'orderLineDetails': [{\r\n\t\t'number': 1,\r\n\t\t'partNumber': '12',\r\n\t\t'description': 'test description',\r\n\t\t'outerPacks': {\r\n\t\t\t'quantity': 40,\r\n\t\t\t'quantityUOM': 'UNT',\r\n\t\t\t'weight': 50,\r\n\t\t\t'weightUOM': 'LB',\r\n\t\t\t'volume': 7890,\r\n\t\t\t'volumeUOM': 'M3',\r\n\t\t\t'length': 30,\r\n\t\t\t'width': 30,\r\n\t\t\t'height': 40,\r\n\t\t\t'lwhuom': 'CM',\r\n\t\t\t'ItemPrice': 20.50\r\n\t\t},\r\n\t\t'itemPrice': 12.75\r\n\t}],\r\n\t'DeliveryInstructions': 'testNotes of DeliveryInstructions ',\r\n\t'PickupInstructions': 'testNotes of PickupInstructions ',\r\n\t'ReferenceNumbers': [{\r\n\t\t'DataType': 'String',\r\n\t\t'Key': 'Customer PO',\r\n\t\t'Value': '639722365'\r\n\t}]rn}', ParameterType.RequestBody);\r\n\r\n IRestResponse response = client.Execute(request);"
+          },
+          {
+            "lang": "Java",
+            "source": "\r\n OkHttpClient client = new OkHttpClient();\r\n\r\n MediaType mediaType = MediaType.parse('application/octet-stream');\r\n\r\n RequestBody body = RequestBody.create(mediaType, '{\r\n\t'Application': 1,\r\n\t'XpoCustomerId': 'HITPRODEN',\r\n\t'orderDetails': {\r\n\t\t'ContainerMode': 'LCL',\r\n\t\t'number': 'TESTORDERVAL12',\r\n\t\t'Date': null,\r\n\t\t'confirmNumber': 'TESTORDERVAL1',\r\n\t\t'invoiceDate': '2020-02-13T12:08:09',\r\n\t\t'invoiceNumber': 'TESTORDERVAL1',\r\n\t\t'goodsDescription': 'test goods description',\r\n\t\t'currency': 'USD',\r\n\t\t'transportMode': 'SEA',\r\n\t\t'CountryOfOrigin': 'US'\r\n\t},\r\n\t'buyer': {\r\n\t\t'organizationCode': 'GARUSAWTG',\r\n\t\t'addressCode': '360 W Plant St Ste 203',\r\n\t\t'Name': 'GARMCO USA Inc.',\r\n\t\t'Address1': '360 W Plant St Ste 203',\r\n\t\t'Address2': '',\r\n\t\t'City': 'Winter Garden',\r\n\t\t'State': 'WI',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '34787',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+1 414-436-3262',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'supplier': {\r\n\t\t'organizationCode': 'HITPRODEN',\r\n\t\t'addressCode': '7150 BRYAN DAIRY ROAD',\r\n\t\t'Name': 'HIT PROMOTIONAL PRODUCTS INC',\r\n\t\t'Address1': '7150 BRYAN DAIRY RD',\r\n\t\t'Address2': '',\r\n\t\t'City': 'LARGO',\r\n\t\t'State': 'FL',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '33777-1501',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+33777-1501',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'orderLineDetails': [{\r\n\t\t'number': 1,\r\n\t\t'partNumber': '12',\r\n\t\t'description': 'test description',\r\n\t\t'outerPacks': {\r\n\t\t\t'quantity': 40,\r\n\t\t\t'quantityUOM': 'UNT',\r\n\t\t\t'weight': 50,\r\n\t\t\t'weightUOM': 'LB',\r\n\t\t\t'volume': 7890,\r\n\t\t\t'volumeUOM': 'M3',\r\n\t\t\t'length': 30,\r\n\t\t\t'width': 30,\r\n\t\t\t'height': 40,\r\n\t\t\t'lwhuom': 'CM',\r\n\t\t\t'ItemPrice': 20.50\r\n\t\t},\r\n\t\t'itemPrice': 12.75\r\n\t}],\r\n\t'DeliveryInstructions': 'testNotes of DeliveryInstructions ',\r\n\t'PickupInstructions': 'testNotes of PickupInstructions ',\r\n\t'ReferenceNumbers': [{\r\n\t\t'DataType': 'String',\r\n\t\t'Key': 'Customer PO',\r\n\t\t'Value': '639722365'\r\n\t}]rn}');\r\n Request request = new Request.Builder()\r\n   .url('https://api-dev.lm.xpo.com/irispoc/rest/v1/CreateOrderOAuth/Cargo/')  \r\n .post(body)  \r\n .addHeader('x-api-key', '6cd15962-94b6-411a-8f5c-3bbd06b70673')  \r\n .addHeader('token', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkU1OEQ3N0M3MEE2MkRCMUQwMDYwODRCNUNCREI0QkVBMUJGRjhGM0YiLCJ0eXAiOiJKV1QiLCJ4NXQiOiI1WTEzeHdwaTJ4MEFZSVMxeTl0TDZodl9qejgifQ.eyJuYmYiOjE1ODU1NTI1ODEsImV4cCI6MTU4NTU1OTc4MSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi1zYW5kYm94LmF1dGh4cG8uY29tIiwiYXVkIjpbImh0dHBzOi8vbG9naW4tc2FuZGJveC5hdXRoeHBvLmNvbS9yZXNvdXJjZXMiLCJ4cG8tcmF0ZXMtYXBpIl0sImNsaWVudF9pZCI6Inhwby1rcmFmdC1oZWluei1pbnRlZ3JhdGlvbiIsInNjb3BlIjpbInhwby1yYXRlcy1hcGkiXX0.NApIxCwAMKA9PtZ5Opbcj7ZvsNh_praJOZdTNBByxYzo2n4xwqH2KrA15jt_lHU_xrGkNZmmLDkrjpU4JCHjfw1xXD3oTh5BUsmEN1ErOpfSnagwPkZpY-LuAuDm55rQHvxxEeSIWdXuwM98wVZc8VbGc9N4bEaNlWXmJXm6UXicgC3rCmwVm3ukNainpR7B24MMDfxPTGB94p4MllCpT-dlVm_1BKrkYnHI_Zz_WKwQ8vgsIfDWVWG3NAXHrGmys6LZmnb6Somu7rv5AdcW29N4hDyPoXKCnCJcEtypdGMeAijR9tK1cN1bM40EJ_bAIYYVn_xdriffgDBBUekE4g')  \r\n .addHeader('cache-control', 'no-cache')  \r\n .addHeader('postman-token', '456e71d6-5eda-c109-78a9-eb3d04b5aa7e')  \r\n .build();\r\n\r\n Response response = client.newCall(request).execute();"
+          },
+          {
+            "lang": "Node Js",
+            "source": "\r\n var http = require('https');\r\n\r\n var options = { 'method': 'POST',  'hostname': 'api-dev.lm.xpo.com', 'port': null,  'path': '/irispoc/rest/v1/CreateOrderOAuth/Cargo/',  'headers': {   'x-api-key': '6cd15962-94b6-411a-8f5c-3bbd06b70673',    'token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkU1OEQ3N0M3MEE2MkRCMUQwMDYwODRCNUNCREI0QkVBMUJGRjhGM0YiLCJ0eXAiOiJKV1QiLCJ4NXQiOiI1WTEzeHdwaTJ4MEFZSVMxeTl0TDZodl9qejgifQ.eyJuYmYiOjE1ODU1NTI1ODEsImV4cCI6MTU4NTU1OTc4MSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi1zYW5kYm94LmF1dGh4cG8uY29tIiwiYXVkIjpbImh0dHBzOi8vbG9naW4tc2FuZGJveC5hdXRoeHBvLmNvbS9yZXNvdXJjZXMiLCJ4cG8tcmF0ZXMtYXBpIl0sImNsaWVudF9pZCI6Inhwby1rcmFmdC1oZWluei1pbnRlZ3JhdGlvbiIsInNjb3BlIjpbInhwby1yYXRlcy1hcGkiXX0.NApIxCwAMKA9PtZ5Opbcj7ZvsNh_praJOZdTNBByxYzo2n4xwqH2KrA15jt_lHU_xrGkNZmmLDkrjpU4JCHjfw1xXD3oTh5BUsmEN1ErOpfSnagwPkZpY-LuAuDm55rQHvxxEeSIWdXuwM98wVZc8VbGc9N4bEaNlWXmJXm6UXicgC3rCmwVm3ukNainpR7B24MMDfxPTGB94p4MllCpT-dlVm_1BKrkYnHI_Zz_WKwQ8vgsIfDWVWG3NAXHrGmys6LZmnb6Somu7rv5AdcW29N4hDyPoXKCnCJcEtypdGMeAijR9tK1cN1bM40EJ_bAIYYVn_xdriffgDBBUekE4g',    'cache-control': 'no-cache',    'postman-token': '111d2ae4-325c-aa8f-b213-64328aeef6c5'  }};\r\n\r\n var req = http.request(options, function (res) {\r\n\r\n var chunks = [];\r\n\r\n res.on('data', function (chunk) {    chunks.push(chunk);  });\r\n\r\n res.on('end', function () {    var body = Buffer.concat(chunks);    console.log(body.toString());  });});\r\n\r\n req.write('{\r\n\t'Application': 1,\r\n\t'XpoCustomerId': 'HITPRODEN',\r\n\t'orderDetails': {\r\n\t\t'ContainerMode': 'LCL',\r\n\t\t'number': 'TESTORDERVAL12',\r\n\t\t'Date': null,\r\n\t\t'confirmNumber': 'TESTORDERVAL1',\r\n\t\t'invoiceDate': '2020-02-13T12:08:09',\r\n\t\t'invoiceNumber': 'TESTORDERVAL1',\r\n\t\t'goodsDescription': 'test goods description',\r\n\t\t'currency': 'USD',\r\n\t\t'transportMode': 'SEA',\r\n\t\t'CountryOfOrigin': 'US'\r\n\t},\r\n\t'buyer': {\r\n\t\t'organizationCode': 'GARUSAWTG',\r\n\t\t'addressCode': '360 W Plant St Ste 203',\r\n\t\t'Name': 'GARMCO USA Inc.',\r\n\t\t'Address1': '360 W Plant St Ste 203',\r\n\t\t'Address2': '',\r\n\t\t'City': 'Winter Garden',\r\n\t\t'State': 'WI',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '34787',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+1 414-436-3262',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'supplier': {\r\n\t\t'organizationCode': 'HITPRODEN',\r\n\t\t'addressCode': '7150 BRYAN DAIRY ROAD',\r\n\t\t'Name': 'HIT PROMOTIONAL PRODUCTS INC',\r\n\t\t'Address1': '7150 BRYAN DAIRY RD',\r\n\t\t'Address2': '',\r\n\t\t'City': 'LARGO',\r\n\t\t'State': 'FL',\r\n\t\t'Country': 'US',\r\n\t\t'PostalCode': '33777-1501',\r\n\t\t'Contact': {\r\n\t\t\t'PhoneNumber': '+33777-1501',\r\n\t\t\t'Email': '',\r\n\t\t\t'Name': ''\r\n\t\t}\r\n\t},\r\n\t'orderLineDetails': [{\r\n\t\t'number': 1,\r\n\t\t'partNumber': '12',\r\n\t\t'description': 'test description',\r\n\t\t'outerPacks': {\r\n\t\t\t'quantity': 40,\r\n\t\t\t'quantityUOM': 'UNT',\r\n\t\t\t'weight': 50,\r\n\t\t\t'weightUOM': 'LB',\r\n\t\t\t'volume': 7890,\r\n\t\t\t'volumeUOM': 'M3',\r\n\t\t\t'length': 30,\r\n\t\t\t'width': 30,\r\n\t\t\t'height': 40,\r\n\t\t\t'lwhuom': 'CM',\r\n\t\t\t'ItemPrice': 20.50\r\n\t\t},\r\n\t\t'itemPrice': 12.75\r\n\t}],\r\n\t'DeliveryInstructions': 'testNotes of DeliveryInstructions ',\r\n\t'PickupInstructions': 'testNotes of PickupInstructions ',\r\n\t'ReferenceNumbers': [{\r\n\t\t'DataType': 'String',\r\n\t\t'Key': 'Customer PO',\r\n\t\t'Value': '639722365'\r\n\t}]\r\n}');\r\n\r\n req.end();"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "ApiCargowiseCreateOrderwithlabelPostRequest": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": "string"
+        },
+        "buyer": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "addressCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                }
+              }
+            },
+            "country": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organizationCode": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            }
+          }
+        },
+        "deliveryInstructions": {
+          "type": "string"
+        },
+        "orderDetails": {
+          "type": "object",
+          "properties": {
+            "additionalTerms": {
+              "type": "string"
+            },
+            "confirmDate": {
+              "type": "string"
+            },
+            "confirmNumber": {
+              "type": "string"
+            },
+            "containerMode": {
+              "type": "string"
+            },
+            "countryOfOrigin": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "deliveryDate": {
+              "type": "string"
+            },
+            "followupDate": {
+              "type": "string"
+            },
+            "goodsDescription": {
+              "type": "string"
+            },
+            "incoTerms": {
+              "type": "string"
+            },
+            "invoiceDate": {
+              "type": "string"
+            },
+            "invoiceNumber": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string"
+            },
+            "requiredPickupDate": {
+              "type": "string"
+            },
+            "serviceLevel": {
+              "type": "string"
+            },
+            "transportMode": {
+              "type": "string"
+            }
+          }
+        },
+        "orderLineDetails": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "commercialInvoiceNumber": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "innerPacks": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "itemPrice": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "length": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "lwhuom": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "quantityUOM": {
+                      "type": "string"
+                    },
+                    "volume": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "volumeUOM": {
+                      "type": "string"
+                    },
+                    "weight": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "weightUOM": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                },
+                "itemPrice": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "number": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "originCountry": {
+                  "type": "string"
+                },
+                "outerPacks": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "itemPrice": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "length": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "lwhuom": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "quantityUOM": {
+                      "type": "string"
+                    },
+                    "volume": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "volumeUOM": {
+                      "type": "string"
+                    },
+                    "weight": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "weightUOM": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                },
+                "partNumber": {
+                  "type": "string"
+                },
+                "quantityInvoiced": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "quantityReceived": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          ]
+        },
+        "pickupInstructions": {
+          "type": "string"
+        },
+        "referenceNumbers": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "dataType": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "supplier": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "addressCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                }
+              }
+            },
+            "country": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organizationCode": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            }
+          }
+        },
+        "xpoCustomerId": {
+          "type": "string"
+        }
+      }
+    },
+    "ApiCargowiseCreateOrderwithlabelPostResponse": {
+      "type": "object",
+      "properties": {
+        "errorDetails": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "labelSatus": {
+          "type": "string"
+        },
+        "orderLabelTemplate": {
+          "type": "object",
+          "properties": {
+            "labelContentAsBase64": {
+              "type": "string"
+            }
+          }
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "orderSatus": {
+          "type": "string"
+        },
+        "statusCode": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "responses": {
+    "400": {
+      "description": "Bad Request - There are miscellaneous errors with the request, for example, mismatches between the request and what is allowed for the operation."
+    },
+    "401": {
+      "description": "Unauthorized or 403 Forbidden - Authentication errors."
+    },
+    "404": {
+      "description": "Not Found - Invalid URL path."
+    },
+    "413": {
+      "description": "Request Entity Too Large - The request data was too large. This is based on the SOA Input Size quota."
+    },
+    "500": {
+      "description": "Internal Server Error - This generic error message appears when an unexpected condition was encountered and a more specific message is not suitable."
+    },
+    "503": {
+      "description": "Service Unavailable - The caller has hit a throttle or the request was rejected because the Atom is starting or stopping."
+    },
+    "522": {
+      "description": "Connection Timed Out - This message is returned to the client when the SOA Worker Maximum Execution Time has been exceeded."
+    },
+    "default": {
+      "description": "Unidentified Exception"
+    }
+  },
+  "security": [
+    {}
+  ]
+}

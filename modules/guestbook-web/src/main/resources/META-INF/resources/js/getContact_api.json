@@ -1,0 +1,41 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GET Contact Person API",
+    "description": "To get the contact person name.",
+    "version": "1"
+  },
+  "host": "anypoint.mulesoft.com",
+  "basePath": "/mocking/api/v1/links/e84fc276-6519-4d36-b86c-6458d5df9491/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/contact": {
+      "get": {
+        "operationId": "contact",
+        "responses": {
+          "200": {
+            "description": "You have sucessfully get the information",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "To get the contact information.",
+              "example": {
+                "strict": true,
+                "value": {
+                  "First-Name": "Deepak",
+                  "Last-Name": "Kumar",
+                  "Email-id": "deepak.kumar@irissoftware.com",
+                  "Company-Name": "IRIS Software Pvt Ltd"
+                }
+              },
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

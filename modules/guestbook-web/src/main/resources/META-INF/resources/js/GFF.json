@@ -1,0 +1,1331 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Global Freight Forwarding For QA",
+		"version": "V1",
+		"title": "Global Freight Forwarding QA"
+	},
+	"host": "api-dev.lm.xpo.com",
+	"basePath": "/ws/rest/GFF",
+	"schemes": [
+		"https"
+	],
+	"paths": {
+		"/cargowise/create/orderwithlabel": {
+			"post": {
+				"tags": [
+					"cargowise"
+				],
+				"summary": "CargowiseCreateOrderwithlabel",
+				"description": "Create Order with Label.",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [{
+						"in": "body",
+						"name": "ApiCargowiseCreateOrderwithlabelPost - Request",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ApiCargowiseCreateOrderwithlabelPostRequest"
+						}
+					}, {
+						"in": "header",
+						"name": "usercode",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success",
+						"schema": {
+							"$ref": "#/definitions/ApiCargowiseCreateOrderwithlabelPostResponse"
+						}
+					},
+					"400": {
+						"$ref": "#/responses/400"
+					},
+					"401": {
+						"$ref": "#/responses/401"
+					},
+					"404": {
+						"$ref": "#/responses/404"
+					},
+					"413": {
+						"$ref": "#/responses/413"
+					},
+					"500": {
+						"$ref": "#/responses/500"
+					},
+					"503": {
+						"$ref": "#/responses/503"
+					},
+					"522": {
+						"$ref": "#/responses/522"
+					},
+					"default": {
+						"$ref": "#/responses/default"
+					}
+				},
+				"x-code-samples": [{
+						"lang": "Shell",
+						"source": "curl \\\n  -XPATCH \\\n  -H\"Accept: application/vnd.github.antiope-preview+json\" \\\n  https://api.github.com/repos/octocat/hello-world/check-suites/preferences \\\n  -d '{\"auto_trigger_checks\":[{\"app_id\":42,\"setting\":true}]}'"
+					}, {
+						"lang": "JS",
+						"source": "octokit.checks.setSuitesPreferences({\n  owner: 'octocat',\n  repo: 'hello-world',\n  auto_trigger_checks: [\n    {\n      app_id: 42,\n      setting: true\n    }\n  ]\n})"
+					}, {
+						"lang": "Ruby",
+						"source": "octokit.set_suites_preferences(\n  'hello-world',\n  [\n    {\n      app_id: 42,\n      setting: true\n    }\n  ]\n)"
+					}
+				]
+			}
+		},
+		"/cargowise/shipment/eventtracking": {
+			"post": {
+				"tags": [
+					"cargowise"
+				],
+				"summary": "CargowiseShipmentEventTracking",
+				"description": "Shipment Event Tracking",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [{
+						"in": "body",
+						"name": "ApiCargowiseShipmentEventtrackingPost - Request",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ApiCargowiseShipmentEventtrackingPostRequest"
+						}
+					}, {
+						"in": "header",
+						"name": "usercode",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success",
+						"schema": {
+							"$ref": "#/definitions/ApiCargowiseShipmentEventtrackingPostResponse"
+						}
+					},
+					"400": {
+						"$ref": "#/responses/400"
+					},
+					"401": {
+						"$ref": "#/responses/401"
+					},
+					"404": {
+						"$ref": "#/responses/404"
+					},
+					"413": {
+						"$ref": "#/responses/413"
+					},
+					"500": {
+						"$ref": "#/responses/500"
+					},
+					"503": {
+						"$ref": "#/responses/503"
+					},
+					"522": {
+						"$ref": "#/responses/522"
+					},
+					"default": {
+						"$ref": "#/responses/default"
+					}
+				}
+			}
+		},
+		"/ratesearch/customer": {
+			"post": {
+				"tags": [
+					"ratesearch"
+				],
+				"summary": "RateSearchCustomer",
+				"description": "To Search Customer Rate",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [{
+						"in": "body",
+						"name": "ApiRatesearchCustomerPost - Request",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ApiRatesearchCustomerPostRequest"
+						}
+					}, {
+						"in": "header",
+						"name": "usercode",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Success",
+						"schema": {
+							"$ref": "#/definitions/ApiRatesearchCustomerPostResponse"
+						}
+					},
+					"400": {
+						"$ref": "#/responses/400"
+					},
+					"401": {
+						"$ref": "#/responses/401"
+					},
+					"404": {
+						"$ref": "#/responses/404"
+					},
+					"413": {
+						"$ref": "#/responses/413"
+					},
+					"500": {
+						"$ref": "#/responses/500"
+					},
+					"503": {
+						"$ref": "#/responses/503"
+					},
+					"522": {
+						"$ref": "#/responses/522"
+					},
+					"default": {
+						"$ref": "#/responses/default"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"ApiCargowiseCreateOrderwithlabelPostRequest": {
+			"type": "object",
+			"properties": {
+				"application": {
+					"type": "string"
+				},
+				"buyer": {
+					"type": "object",
+					"properties": {
+						"address1": {
+							"type": "string"
+						},
+						"address2": {
+							"type": "string"
+						},
+						"addressCode": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"contact": {
+							"type": "object",
+							"properties": {
+								"email": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"phoneNumber": {
+									"type": "string"
+								}
+							}
+						},
+						"country": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"organizationCode": {
+							"type": "string"
+						},
+						"postalCode": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						}
+					}
+				},
+				"deliveryInstructions": {
+					"type": "string"
+				},
+				"orderDetails": {
+					"type": "object",
+					"properties": {
+						"additionalTerms": {
+							"type": "string"
+						},
+						"confirmDate": {
+							"type": "string"
+						},
+						"confirmNumber": {
+							"type": "string"
+						},
+						"containerMode": {
+							"type": "string"
+						},
+						"countryOfOrigin": {
+							"type": "string"
+						},
+						"currency": {
+							"type": "string"
+						},
+						"date": {
+							"type": "string"
+						},
+						"deliveryDate": {
+							"type": "string"
+						},
+						"followupDate": {
+							"type": "string"
+						},
+						"goodsDescription": {
+							"type": "string"
+						},
+						"incoTerms": {
+							"type": "string"
+						},
+						"invoiceDate": {
+							"type": "string"
+						},
+						"invoiceNumber": {
+							"type": "string"
+						},
+						"number": {
+							"type": "string"
+						},
+						"requiredPickupDate": {
+							"type": "string"
+						},
+						"serviceLevel": {
+							"type": "string"
+						},
+						"transportMode": {
+							"type": "string"
+						}
+					}
+				},
+				"orderLineDetails": {
+					"type": "array",
+					"items": [{
+							"type": "object",
+							"properties": {
+								"commercialInvoiceNumber": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								},
+								"innerPacks": {
+									"type": "object",
+									"properties": {
+										"height": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"itemPrice": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"length": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"lwhuom": {
+											"type": "string"
+										},
+										"quantity": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"quantityUOM": {
+											"type": "string"
+										},
+										"volume": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"volumeUOM": {
+											"type": "string"
+										},
+										"weight": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"weightUOM": {
+											"type": "string"
+										},
+										"width": {
+											"type": "integer",
+											"format": "int32"
+										}
+									}
+								},
+								"itemPrice": {
+									"type": "integer",
+									"format": "int32"
+								},
+								"number": {
+									"type": "integer",
+									"format": "int32"
+								},
+								"originCountry": {
+									"type": "string"
+								},
+								"outerPacks": {
+									"type": "object",
+									"properties": {
+										"height": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"itemPrice": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"length": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"lwhuom": {
+											"type": "string"
+										},
+										"quantity": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"quantityUOM": {
+											"type": "string"
+										},
+										"volume": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"volumeUOM": {
+											"type": "string"
+										},
+										"weight": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"weightUOM": {
+											"type": "string"
+										},
+										"width": {
+											"type": "integer",
+											"format": "int32"
+										}
+									}
+								},
+								"partNumber": {
+									"type": "string"
+								},
+								"quantityInvoiced": {
+									"type": "integer",
+									"format": "int32"
+								},
+								"quantityReceived": {
+									"type": "integer",
+									"format": "int32"
+								}
+							}
+						}
+					]
+				},
+				"pickupInstructions": {
+					"type": "string"
+				},
+				"referenceNumbers": {
+					"type": "array",
+					"items": [{
+							"type": "object",
+							"properties": {
+								"dataType": {
+									"type": "string"
+								},
+								"key": {
+									"type": "string"
+								},
+								"value": {
+									"type": "string"
+								}
+							}
+						}
+					]
+				},
+				"supplier": {
+					"type": "object",
+					"properties": {
+						"address1": {
+							"type": "string"
+						},
+						"address2": {
+							"type": "string"
+						},
+						"addressCode": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"contact": {
+							"type": "object",
+							"properties": {
+								"email": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"phoneNumber": {
+									"type": "string"
+								}
+							}
+						},
+						"country": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"organizationCode": {
+							"type": "string"
+						},
+						"postalCode": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						}
+					}
+				},
+				"xpoCustomerId": {
+					"type": "string"
+				}
+			}
+		},
+		"ApiCargowiseCreateOrderwithlabelPostResponse": {
+			"type": "object",
+			"properties": {
+				"errorDetails": {
+					"type": "array",
+					"items": [{
+							"type": "string"
+						}
+					]
+				},
+				"labelSatus": {
+					"type": "string"
+				},
+				"orderLabelTemplate": {
+					"type": "object",
+					"properties": {
+						"labelContentAsBase64": {
+							"type": "string"
+						}
+					}
+				},
+				"orderNumber": {
+					"type": "string"
+				},
+				"orderSatus": {
+					"type": "string"
+				},
+				"statusCode": {
+					"type": "string"
+				}
+			}
+		},
+		"ApiCargowiseShipmentEventtrackingPostRequest": {
+			"type": "object",
+			"properties": {
+				"application": {
+					"type": "string"
+				},
+				"customerOrderNo": {
+					"type": "string"
+				},
+				"customerShipmentNo": {
+					"type": "string"
+				},
+				"houseBillNo": {
+					"type": "string"
+				},
+				"key": {
+					"type": "string"
+				},
+				"masterBillNo": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"userName": {
+					"type": "string"
+				},
+				"xpoCustomerCode": {
+					"type": "string"
+				},
+				"xpoShipmentNo": {
+					"type": "string"
+				}
+			}
+		},
+		"ApiCargowiseShipmentEventtrackingPostResponse": {
+			"type": "object",
+			"properties": {
+				"errorDetails": {
+					"type": "array",
+					"items": [{
+							"type": "string"
+						}
+					]
+				},
+				"events": {
+					"type": "array",
+					"items": [{
+							"type": "object",
+							"properties": {
+								"description": {
+									"type": "string"
+								},
+								"details": {
+									"type": "string"
+								},
+								"eventCreated": {
+									"type": "string"
+								},
+								"eventTimeLocal": {
+									"type": "string"
+								},
+								"eventTimeUtc": {
+									"type": "string"
+								},
+								"eventTypeCode": {
+									"type": "string"
+								},
+								"location": {
+									"type": "object",
+									"properties": {
+										"unlocCode": {
+											"type": "string"
+										},
+										"unlocName": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					]
+				},
+				"houseBillNo": {
+					"type": "string"
+				},
+				"masterBillNo": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"statusCode": {
+					"type": "string"
+				},
+				"statusDescription": {
+					"type": "string"
+				},
+				"xpoShipmentNo": {
+					"type": "string"
+				}
+			}
+		},
+		"ApiRatesearchCustomerPostRequest": {
+			"type": "object",
+			"properties": {
+				"equipmentGroup": {
+					"type": "string"
+				},
+				"frieghtTypes": {
+					"type": "array",
+					"items": [{
+							"type": "string"
+						}
+					]
+				},
+				"locations": {
+					"type": "array",
+					"items": [{
+							"type": "object",
+							"properties": {
+								"city": {
+									"type": "string"
+								},
+								"countryCode": {
+									"type": "string"
+								},
+								"district": {
+									"type": "string"
+								},
+								"locationType": {
+									"type": "string"
+								},
+								"port": {
+									"type": "string"
+								},
+								"postalCode": {
+									"type": "string"
+								},
+								"stateCode": {
+									"type": "string"
+								}
+							}
+						}
+					]
+				},
+				"quantity": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"services": {
+					"type": "array",
+					"items": [{
+							"type": "string"
+						}
+					]
+				},
+				"username": {
+					"type": "string"
+				},
+				"volume": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"volumeUnit": {
+					"type": "string"
+				},
+				"weight": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"weightUnit": {
+					"type": "string"
+				}
+			}
+		},
+		"ApiRatesearchCustomerPostResponse": {
+			"type": "array",
+			"items": [{
+					"type": "object",
+					"properties": {
+						"accessorials": {
+							"type": "array",
+							"items": [{
+									"type": "object",
+									"properties": {
+										"charge": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"chargeMin": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"currency": {
+											"type": "string"
+										},
+										"description": {
+											"type": "string"
+										},
+										"notes": {
+											"type": "string"
+										},
+										"payment": {
+											"type": "string"
+										},
+										"total": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"type": {
+											"type": "string"
+										}
+									}
+								}
+							]
+						},
+						"amendmentId": {
+							"type": "string"
+						},
+						"carrierCode": {
+							"type": "string"
+						},
+						"carrierName": {
+							"type": "string"
+						},
+						"carrierSCAC": {
+							"type": "string"
+						},
+						"chargesInfo": {
+							"type": "array",
+							"items": [{
+									"type": "object",
+									"properties": {
+										"alwaysApply": {
+											"type": "string"
+										},
+										"chargeGroup": {
+											"type": "string"
+										},
+										"chargeMax": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"chargeMin": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"chargeType": {
+											"type": "string"
+										},
+										"contractId": {
+											"type": "string"
+										},
+										"currency": {
+											"type": "string"
+										},
+										"currencyRate": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"description": {
+											"type": "string"
+										},
+										"effectiveDt": {
+											"type": "string"
+										},
+										"expirationDt": {
+											"type": "string"
+										},
+										"prepaidCollect": {
+											"type": "string"
+										},
+										"prepaidCollectChargeType": {
+											"type": "string"
+										},
+										"price": {
+											"type": "integer",
+											"format": "int32"
+										},
+										"rateBasis": {
+											"type": "string"
+										},
+										"surchargeChargeMode": {
+											"type": "string"
+										},
+										"surchargeCode": {
+											"type": "string"
+										},
+										"type": {
+											"type": "string"
+										}
+									}
+								}
+							]
+						},
+						"commodityNotes": {
+							"type": "string"
+						},
+						"contractEffective": {
+							"type": "string"
+						},
+						"contractExpire": {
+							"type": "string"
+						},
+						"contractId": {
+							"type": "string"
+						},
+						"currency": {
+							"type": "string"
+						},
+						"destinationCity": {
+							"type": "string"
+						},
+						"destinationCountry": {
+							"type": "string"
+						},
+						"destinationDistrict": {
+							"type": "string"
+						},
+						"destinationMunicipality": {
+							"type": "string"
+						},
+						"destinationPortCode": {
+							"type": "string"
+						},
+						"destinationPortName": {
+							"type": "string"
+						},
+						"destinationState": {
+							"type": "string"
+						},
+						"destinationViaPortCode": {
+							"type": "string"
+						},
+						"destinationViaPortName": {
+							"type": "string"
+						},
+						"destinationZip": {
+							"type": "string"
+						},
+						"freightType": {
+							"type": "string"
+						},
+						"originCity": {
+							"type": "string"
+						},
+						"originCountry": {
+							"type": "string"
+						},
+						"originDistrict": {
+							"type": "string"
+						},
+						"originMunicipality": {
+							"type": "string"
+						},
+						"originPortCode": {
+							"type": "string"
+						},
+						"originPortName": {
+							"type": "string"
+						},
+						"originState": {
+							"type": "string"
+						},
+						"originViaPortCode": {
+							"type": "string"
+						},
+						"originViaPortName": {
+							"type": "string"
+						},
+						"originZip": {
+							"type": "string"
+						},
+						"rank": {
+							"type": "string"
+						},
+						"rate": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"rateOffering": {
+							"type": "string"
+						},
+						"rateOfferingRemarks": {
+							"type": "array",
+							"items": [{
+									"type": "object",
+									"properties": {
+										"noteText": {
+											"type": "string"
+										},
+										"noteType": {
+											"type": "string"
+										},
+										"rateOffering": {
+											"type": "string"
+										},
+										"rateRecord": {
+											"type": "string"
+										},
+										"sequence": {
+											"type": "integer",
+											"format": "int32"
+										}
+									}
+								}
+							]
+						},
+						"rateRecord": {
+							"type": "string"
+						},
+						"rateRecordRemarks": {
+							"type": "array",
+							"items": [{
+									"type": "object",
+									"properties": {
+										"noteText": {
+											"type": "string"
+										},
+										"noteType": {
+											"type": "string"
+										},
+										"rateOffering": {
+											"type": "string"
+										},
+										"rateRecord": {
+											"type": "string"
+										},
+										"sequence": {
+											"type": "integer",
+											"format": "int32"
+										}
+									}
+								}
+							]
+						},
+						"rateRemarks": {
+							"type": "string"
+						},
+						"rateType": {
+							"type": "string"
+						},
+						"rateValidFrom": {
+							"type": "string"
+						},
+						"rateValidTo": {
+							"type": "string"
+						},
+						"referenceNo": {
+							"type": "string"
+						},
+						"scheduleInfo": {
+							"type": "object",
+							"properties": {
+								"connectingScheduleInfo": {
+									"type": "array",
+									"items": [{
+											"type": "object",
+											"properties": {
+												"carrierCode": {
+													"type": "string"
+												},
+												"connectingPort": {
+													"type": "string"
+												},
+												"firstLeg": {
+													"type": "array",
+													"items": [{
+															"type": "object",
+															"properties": {
+																"arrivalDate": {
+																	"type": "string"
+																},
+																"arrivalTime": {
+																	"type": "string"
+																},
+																"carrierCode": {
+																	"type": "string"
+																},
+																"departureDate": {
+																	"type": "string"
+																},
+																"departureTime": {
+																	"type": "string"
+																},
+																"destinationCode": {
+																	"type": "string"
+																},
+																"duration": {
+																	"type": "string"
+																},
+																"flightNumber": {
+																	"type": "string"
+																},
+																"originCode": {
+																	"type": "string"
+																},
+																"service": {
+																	"type": "string"
+																},
+																"stopDetails": {
+																	"type": "array",
+																	"items": [{
+																			"type": "object",
+																			"properties": {
+																				"code": {
+																					"type": "string"
+																				},
+																				"date": {
+																					"type": "string"
+																				},
+																				"sequence": {
+																					"type": "integer",
+																					"format": "int32"
+																				},
+																				"time": {
+																					"type": "string"
+																				}
+																			}
+																		}
+																	]
+																},
+																"stops": {
+																	"type": "integer",
+																	"format": "int32"
+																},
+																"stopsCode": {
+																	"type": "string"
+																},
+																"transit": {
+																	"type": "integer",
+																	"format": "int32"
+																},
+																"vesselFlag": {
+																	"type": "string"
+																},
+																"vesselName": {
+																	"type": "string"
+																},
+																"voyageId": {
+																	"type": "string"
+																}
+															}
+														}
+													]
+												},
+												"secondLeg": {
+													"type": "array",
+													"items": [{
+															"type": "object",
+															"properties": {
+																"arrivalDate": {
+																	"type": "string"
+																},
+																"arrivalTime": {
+																	"type": "string"
+																},
+																"carrierCode": {
+																	"type": "string"
+																},
+																"departureDate": {
+																	"type": "string"
+																},
+																"departureTime": {
+																	"type": "string"
+																},
+																"destinationCode": {
+																	"type": "string"
+																},
+																"duration": {
+																	"type": "string"
+																},
+																"flightNumber": {
+																	"type": "string"
+																},
+																"originCode": {
+																	"type": "string"
+																},
+																"service": {
+																	"type": "string"
+																},
+																"stopDetails": {
+																	"type": "array",
+																	"items": [{
+																			"type": "object",
+																			"properties": {
+																				"code": {
+																					"type": "string"
+																				},
+																				"date": {
+																					"type": "string"
+																				},
+																				"sequence": {
+																					"type": "integer",
+																					"format": "int32"
+																				},
+																				"time": {
+																					"type": "string"
+																				}
+																			}
+																		}
+																	]
+																},
+																"stops": {
+																	"type": "integer",
+																	"format": "int32"
+																},
+																"stopsCode": {
+																	"type": "string"
+																},
+																"transit": {
+																	"type": "integer",
+																	"format": "int32"
+																},
+																"vesselFlag": {
+																	"type": "string"
+																},
+																"vesselName": {
+																	"type": "string"
+																},
+																"voyageId": {
+																	"type": "string"
+																}
+															}
+														}
+													]
+												}
+											}
+										}
+									]
+								},
+								"scheduleInfo": {
+									"type": "array",
+									"items": [{
+											"type": "object",
+											"properties": {
+												"arrivalDate": {
+													"type": "string"
+												},
+												"arrivalTime": {
+													"type": "string"
+												},
+												"carrierCode": {
+													"type": "string"
+												},
+												"departureDate": {
+													"type": "string"
+												},
+												"departureTime": {
+													"type": "string"
+												},
+												"destinationCode": {
+													"type": "string"
+												},
+												"duration": {
+													"type": "string"
+												},
+												"flightNumber": {
+													"type": "string"
+												},
+												"originCode": {
+													"type": "string"
+												},
+												"service": {
+													"type": "string"
+												},
+												"stopDetails": {
+													"type": "array",
+													"items": [{
+															"type": "object",
+															"properties": {
+																"code": {
+																	"type": "string"
+																},
+																"date": {
+																	"type": "string"
+																},
+																"sequence": {
+																	"type": "integer",
+																	"format": "int32"
+																},
+																"time": {
+																	"type": "string"
+																}
+															}
+														}
+													]
+												},
+												"stops": {
+													"type": "integer",
+													"format": "int32"
+												},
+												"stopsCode": {
+													"type": "string"
+												},
+												"transit": {
+													"type": "integer",
+													"format": "int32"
+												},
+												"vesselFlag": {
+													"type": "string"
+												},
+												"vesselName": {
+													"type": "string"
+												},
+												"voyageId": {
+													"type": "string"
+												}
+											}
+										}
+									]
+								}
+							}
+						},
+						"serviceCode": {
+							"type": "string"
+						},
+						"serviceLevel": {
+							"type": "string"
+						},
+						"serviceType": {
+							"type": "string"
+						},
+						"shipmentType": {
+							"type": "string"
+						},
+						"subtotal": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"surcharges": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"tax": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"total": {
+							"type": "integer",
+							"format": "int32"
+						},
+						"transit": {
+							"type": "string"
+						}
+					}
+				}
+			]
+		}
+	},
+	"security": [{}
+	],
+	"responses": {
+		"400": {
+			"description": "Bad Request - There are miscellaneous errors with the request, for example, mismatches between the request and what is allowed for the operation."
+		},
+		"401": {
+			"description": "Unauthorized or 403 Forbidden - Authentication errors."
+		},
+		"404": {
+			"description": "Not Found - Invalid URL path."
+		},
+		"413": {
+			"description": "Request Entity Too Large - The request data was too large. This is based on the SOA Input Size quota."
+		},
+		"500": {
+			"description": "Internal Server Error - This generic error message appears when an unexpected condition was encountered and a more specific message is not suitable."
+		},
+		"503": {
+			"description": "Service Unavailable - The caller has hit a throttle or the request was rejected because the Atom is starting or stopping."
+		},
+		"522": {
+			"description": "Connection Timed Out - This message is returned to the client when the SOA Worker Maximum Execution Time has been exceeded."
+		},
+		"default": {
+			"description": "Unidentified Exception"
+		}
+	}
+}

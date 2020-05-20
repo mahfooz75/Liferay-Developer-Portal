@@ -1,0 +1,154 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Create Order API",
+    "version": "1.0"
+  },
+  "host": "create-order",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/create-order": {
+      "post": {
+        "operationId": "create-order",
+        "parameters": [
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "example": {
+                "orderId": "1234",
+                "customerName": "Mahfooz",
+                "customerAddress": "Noida",
+                "customerMobile": "9717395464"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "status": "201",
+                  "message": "Order Created Successfully"
+                }
+              }
+            },
+            "500": {
+              "description": "",
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "status": "500",
+                  "message": "Internal Server Error"
+                }
+              }
+            }
+          }
+      }
+    },
+    "/get-order/{orderId}": {
+      "x-amf-description": "Get order by passing the order id as querystring",
+      "get": {
+        "operationId": "get-order/orderId",
+        "parameters": [
+          {
+            "name": "orderId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "orderId": "1234",
+                  "customerName": "Mahfooz",
+                  "customerAddress": "Noida",
+                  "customerMobile": "9717395464"
+                }
+              }
+            },
+            "404": {
+              "description": "",
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "status": "404",
+                  "message": "Order not found"
+                }
+              }
+            },
+            "500": {
+              "description": "",
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "status": "500",
+                  "message": "Internal Server Error"
+                }
+              }
+            }
+          }
+      }
+    },
+    "/get-orders": {
+      "x-amf-description": "Get all orders",
+      "get": {
+        "operationId": "get-orders",
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "description": "",
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": [
+                  {
+                    "orderId": "1234",
+                    "customerName": "Mahfooz",
+                    "customerAddress": "Noida",
+                    "customerMobile": "9717395464"
+                  },
+                  {
+                    "orderId": "9845",
+                    "customerName": "Deepak",
+                    "customerAddress": "Ghaziabad",
+                    "customerMobile": "9990082032"
+                  }
+                ]
+              }
+            },
+            "500": {
+              "description": "",
+              "x-amf-mediaType": "application/json",
+              "schema": {
+                "example": {
+                  "status": "500",
+                  "message": "Internal Server Error"
+                }
+              }
+            }
+          }
+      }
+    }
+  }
+}

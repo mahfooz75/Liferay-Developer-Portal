@@ -1,0 +1,599 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Create Order API-OAuth-2",
+    "version": "1.0"
+  },
+  "host": "create-order-api-oauth-2.us-e2.cloudhub.io",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "XPO Logistics uses OAuth 2.0 client credentials to secure access to the API endpoints. The Client Credentials grant type can be used by clients to obtain an access token outside of the context of a user. Request for a bearer token using the oAuth client credentials and x-api-key provided by XPO.\n\n<img src=\"../images/auth_token_flow.png\" alt=\"Authorization Flow Diagram\">"
+    }
+  ],
+  "paths": {
+    "/create-order": {
+      "post": {
+        "operationId": "create-order",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "example": {
+                "orderId": "1234",
+                "orderDate": "2020-03-22",
+                "purchaseAmount": "150.00",
+                "currencyCode": "USD",
+                "customerName": "Nick Rimando",
+                "customerAddress": "California",
+                "customerMobile": "9717395464"
+              }
+            }
+          }
+        ],
+        "x-code-samples": [
+          {
+            "lang": "Curl",
+            "source": "curl --location --request POST 'http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/create-order' \r\n--header 'Authorization: Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ' \r\n--header 'Content-Type: application\/json' \r\n--data-raw '{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}'"
+          },
+          {
+            "lang": "Java",
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nMediaType mediaType = MediaType.parse(\"application\/json\");\r\nRequestBody body = RequestBody.create(mediaType, \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\");\r\nRequest request = new Request.Builder()\r\n  .url(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/create-order\")\r\n  .method(\"POST\", body)\r\n  .addHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\")\r\n  .addHeader(\"Content-Type\", \"application\/json\")\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+          },
+          {
+            "lang": "C#",
+            "source": "var client = new RestClient(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/create-order\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.POST);\r\nrequest.AddHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\");\r\nrequest.AddHeader(\"Content-Type\", \"application\/json\");\r\nrequest.AddParameter(\"application\/json\", \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+            },
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "200",
+                "message": "Order Created Successfully"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        }
+    },
+    "/get-order/{orderId}": {
+      "x-amf-description": "Get order by passing the order id as querystring",
+      "get": {
+        "operationId": "get-order/{orderId}",
+        "parameters": [
+          {
+            "name": "orderId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+
+        ],
+        "x-code-samples": [
+          {
+            "lang": "Curl",
+            "source": "curl --location --request GET 'http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-order\/1234' \r\n--header 'Authorization: Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ' \r\n--header 'Content-Type: application\/json' "
+          },
+          {
+            "lang": "Java",
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nMediaType mediaType = MediaType.parse(\"application\/json\");\r\nRequest request = new Request.Builder()\r\n  .url(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-order\/1234\")\r\n    .addHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\")\r\n  .addHeader(\"Content-Type\", \"application\/json\")\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+          },
+          {
+            "lang": "C#",
+            "source": "var client = new RestClient(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-order\/1234\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.POST);\r\nrequest.AddHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\");\r\nrequest.AddHeader(\"Content-Type\", \"application\/json\");\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "orderId": "1234",
+                "orderDate": "2020-03-22",
+                "purchaseAmount": "150.00",
+                "currencyCode": "USD",
+                "customerName": "Nick Rimando",
+                "customerAddress": "California",
+                "customerMobile": "9717395464"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        }
+      }
+    },
+
+    "/get-orders": {
+      "x-amf-description": "Get all orders",
+      "get": {
+        "operationId": "get-orders",
+        "parameters": [
+
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+
+        ],
+        "x-code-samples": [
+          {
+            "lang": "Curl",
+            "source": "curl --location --request GET 'http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-orders' \r\n--header 'Authorization: Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ' \r\n--header 'Content-Type: application\/json'"
+          },
+          {
+            "lang": "Java",
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nMediaType mediaType = MediaType.parse(\"application\/json\");\r\nRequest request = new Request.Builder()\r\n  .url(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-orders\")\r\n    .addHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\")\r\n  .addHeader(\"Content-Type\", \"application\/json\")\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+          },
+          {
+            "lang": "C#",
+            "source": "var client = new RestClient(\"http:\/\/create-order-api-with-oauth.us-e2.cloudhub.io\/api\/get-orders\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.POST);\r\nrequest.AddHeader(\"Authorization\", \"Bearer MgHXC-TqZRu6uoE-JW0esUbsyqnd2CnGc6g8RcPg-UkgE4TbesAviMWdZgh-xIjlwKGluit1iL6MQV8N3S3ruQ\");\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": [
+                {
+                  "orderId": "1234",
+                  "orderDate": "2020-03-22",
+                  "purchaseAmount": "150.00",
+                  "currencyCode": "USD",
+                  "customerName": "Nick Rimando",
+                  "customerAddress": "California",
+                  "customerMobile": "9717395464"
+                },
+                {
+                  "orderId": "9807",
+                  "orderDate": "2020-03-22",
+                  "purchaseAmount": "200.00",
+                  "currencyCode": "USD",
+                  "customerName": "Julian Green",
+                  "customerAddress": "London",
+                  "customerMobile": "9807654310"
+                }
+              ]
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "ApiCargowiseCreateOrderwithlabelPostRequest": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": "string"
+        },
+        "buyer": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "addressCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                }
+              }
+            },
+            "country": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organizationCode": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            }
+          }
+        },
+        "deliveryInstructions": {
+          "type": "string"
+        },
+        "orderDetails": {
+          "type": "object",
+          "properties": {
+            "additionalTerms": {
+              "type": "string"
+            },
+            "confirmDate": {
+              "type": "string"
+            },
+            "confirmNumber": {
+              "type": "string"
+            },
+            "containerMode": {
+              "type": "string"
+            },
+            "countryOfOrigin": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "deliveryDate": {
+              "type": "string"
+            },
+            "followupDate": {
+              "type": "string"
+            },
+            "goodsDescription": {
+              "type": "string"
+            },
+            "incoTerms": {
+              "type": "string"
+            },
+            "invoiceDate": {
+              "type": "string"
+            },
+            "invoiceNumber": {
+              "type": "string"
+            },
+            "number": {
+              "type": "string"
+            },
+            "requiredPickupDate": {
+              "type": "string"
+            },
+            "serviceLevel": {
+              "type": "string"
+            },
+            "transportMode": {
+              "type": "string"
+            }
+          }
+        },
+        "orderLineDetails": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "commercialInvoiceNumber": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "innerPacks": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "itemPrice": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "length": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "lwhuom": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "quantityUOM": {
+                      "type": "string"
+                    },
+                    "volume": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "volumeUOM": {
+                      "type": "string"
+                    },
+                    "weight": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "weightUOM": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                },
+                "itemPrice": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "number": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "originCountry": {
+                  "type": "string"
+                },
+                "outerPacks": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "itemPrice": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "length": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "lwhuom": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "quantityUOM": {
+                      "type": "string"
+                    },
+                    "volume": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "volumeUOM": {
+                      "type": "string"
+                    },
+                    "weight": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "weightUOM": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                },
+                "partNumber": {
+                  "type": "string"
+                },
+                "quantityInvoiced": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "quantityReceived": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          ]
+        },
+        "pickupInstructions": {
+          "type": "string"
+        },
+        "referenceNumbers": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "dataType": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "supplier": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "addressCode": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phoneNumber": {
+                  "type": "string"
+                }
+              }
+            },
+            "country": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organizationCode": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            }
+          }
+        },
+        "xpoCustomerId": {
+          "type": "string"
+        }
+      }
+    },
+    "ApiCargowiseCreateOrderwithlabelPostResponse": {
+      "type": "object",
+      "properties": {
+        "errorDetails": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "labelSatus": {
+          "type": "string"
+        },
+        "orderLabelTemplate": {
+          "type": "object",
+          "properties": {
+            "labelContentAsBase64": {
+              "type": "string"
+            }
+          }
+        },
+        "orderNumber": {
+          "type": "string"
+        },
+        "orderSatus": {
+          "type": "string"
+        },
+        "statusCode": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "responses": {
+    "400": {
+      "description": "Bad Request - There are miscellaneous errors with the request, for example, mismatches between the request and what is allowed for the operation."
+    },
+    "401": {
+      "description": "Unauthorized or 403 Forbidden - Authentication errors."
+    },
+    "404": {
+      "description": "Not Found - Invalid URL path."
+    },
+    "413": {
+      "description": "Request Entity Too Large - The request data was too large. This is based on the SOA Input Size quota."
+    },
+    "500": {
+      "description": "Internal Server Error - This generic error message appears when an unexpected condition was encountered and a more specific message is not suitable."
+    },
+    "503": {
+      "description": "Service Unavailable - The caller has hit a throttle or the request was rejected because the Atom is starting or stopping."
+    },
+    "522": {
+      "description": "Connection Timed Out - This message is returned to the client when the SOA Worker Maximum Execution Time has been exceeded."
+    },
+    "default": {
+      "description": "Unidentified Exception"
+    }
+  },
+  "security": [
+    {}
+  ]
+}
+      
+    
+  
+
+      
+    
+  
+
