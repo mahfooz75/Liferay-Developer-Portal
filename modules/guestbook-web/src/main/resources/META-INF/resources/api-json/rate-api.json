@@ -24,7 +24,7 @@
           },
           {
             "lang": "Java",
-            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nRequest request = new Request.Builder()\r\n  .url(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/c1072d26-7abe-4104-bd54-f38944806b69\/get-rate\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n.build();\r\nRequest request = new Request.Builder()\r\n.url(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/c1072d26-7abe-4104-bd54-f38944806b69\/get-rate\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
           },
           {
             "lang": "C#",
