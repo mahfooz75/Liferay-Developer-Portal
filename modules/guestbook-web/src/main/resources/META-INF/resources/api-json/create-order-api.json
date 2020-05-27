@@ -6,7 +6,7 @@
     "description": " "
   },
   "host": "anypoint.mulesoft.com",
-  "basePath": "/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/api",
+  "basePath": "/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0",
   "schemes": [
     "https"
   ],
@@ -52,7 +52,6 @@
             "schema": {
               "example": 
               {
-
                 "orderId": "1234",
                 "orderDate": "2020-03-22",
                 "purchaseAmount": "150.00",
@@ -67,15 +66,15 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request POST 'https://anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/create-order' \r\n--header 'Content-Type: application\/json' \r\n--data-raw '{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}'"
+            "source": "curl --location --request POST \"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/create-order\" --header \"Content-Type: application/json\" --data-raw \"{\"orderId\": \"1234\", \"orderDate\": \"2020-03-22\", \"purchaseAmount\": \"150.00\", \"currencyCode\": \"USD\", \"customerName\": \"Nick Rimando\", \"customerAddress\": \"California\", \"customerMobile\": \"9717395464\"}\""
           },
           {
             "lang": "Java",
-            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nMediaType mediaType = MediaType.parse(\"application\/json\");\r\nRequestBody body = RequestBody.create(mediaType, \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\");\r\nRequest request = new Request.Builder()\r\n  .url(\"https://anypoint.mulesoft.com/mocking/pi/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/api/create-order\")\r\n  .method(\"POST\", body)\r\n  .addHeader(\"Content-Type\", \"application\/json\")\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder().build();MediaType mediaType = MediaType.parse(\"application\/json\");RequestBody body = RequestBody.create(mediaType, \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\");\r\nRequest request = new Request.Builder()\r\n  .url(\"https://anypoint.mulesoft.com/mocking/pi/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/create-order\")\r\n  .method(\"POST\", body)\r\n  .addHeader(\"Content-Type\", \"application\/json\")\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
           },
           {
             "lang": "C#",
-            "source": "var client = new RestClient(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/create-order\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.POST);\r\nrequest.AddHeader(\"Content-Type\", \"application\/json\");\r\nrequest.AddParameter(\"application\/json\", \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+            "source": "var client = new RestClient(\"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/create-order\");client.Timeout = -1;var request = new RestRequest(Method.POST);request.AddHeader(\"Content-Type\", \"application\/json\");\r\nrequest.AddParameter(\"application\/json\", \"{\r\n  \"orderId\": \"1234\",\r\n  \"orderDate\": \"2020-03-22\",\r\n  \"purchaseAmount\": \"150.00\",\r\n  \"currencyCode\": \"USD\",\r\n  \"customerName\": \"Nick Rimando\",\r\n  \"customerAddress\": \"California\",\r\n  \"customerMobile\": \"9717395464\"\r\n}\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
           }
         ],
         "responses": {
@@ -129,15 +128,15 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request GET 'https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-order\/1234' \\\r\n--data-raw ''"
+            "source": "curl --location --request GET \"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-order/1234\" --header \"Content-Type: application/json\" --data-raw ''"
           },
           {
             "lang": "Java",
-            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nRequest request = new Request.Builder()\r\n  .url(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-order\/1234\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nRequest request = new Request.Builder()\r\n  .url(\"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-order/1234\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
           },
           {
             "lang": "C#",
-            "source": "var client = new RestClient(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-order\/1234\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.GET);\r\nrequest.AddParameter(\"text\/plain\", \"\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+            "source": "var client = new RestClient(\"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-order/1234\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.GET);\r\nrequest.AddParameter(\"text\/plain\", \"\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
           }
         ],
         "responses": {
@@ -178,15 +177,15 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request GET 'https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-orders' \\\r\n--data-raw ''"
+            "source": "curl --location --request GET \"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-orders\" --header \"Content-Type: application/json\" --data-raw ''"
           },
           {
             "lang": "Java",
-            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nRequest request = new Request.Builder()\r\n  .url(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-orders\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
+            "source": "OkHttpClient client = new OkHttpClient().newBuilder()\r\n  .build();\r\nRequest request = new Request.Builder()\r\n  .url(\"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-orders\")\r\n  .method(\"GET\", null)\r\n  .build();\r\nResponse response = client.newCall(request).execute();"
           },
           {
             "lang": "C#",
-            "source": "var client = new RestClient(\"https:\/\/anypoint.mulesoft.com\/mocking\/api\/v1\/links\/807078dd-ae64-4422-ba19-7f9d836af1d0\/api\/get-orders\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.GET);\r\nrequest.AddParameter(\"text\/plain\", \"\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
+            "source": "var client = new RestClient(\"https://anypoint.mulesoft.com/mocking/api/v1/links/807078dd-ae64-4422-ba19-7f9d836af1d0/get-orders\");\r\nclient.Timeout = -1;\r\nvar request = new RestRequest(Method.GET);\r\nrequest.AddParameter(\"text\/plain\", \"\",  ParameterType.RequestBody);\r\nIRestResponse response = client.Execute(request);\r\nConsole.WriteLine(response.Content);"
           }
         ],
         "responses": {

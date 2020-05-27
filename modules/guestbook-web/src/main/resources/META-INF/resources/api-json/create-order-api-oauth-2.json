@@ -46,7 +46,7 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request POST 'https:\/\/create-order-api-oauth-2.us-e2.cloudhub.io\/api\/create-order' --header 'Authorization: Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q' --header 'Content-Type: application\/json' --data-raw '{  \"orderId\": \"1234\",  \"orderDate\": \"2020-03-22\",  \"purchaseAmount\": \"150.00\",  \"currencyCode\": \"USD\",  \"customerName\": \"Nick Rimando\",  \"customerAddress\": \"California\",  \"customerMobile\": \"9717395464\"}'"
+            "source": "curl --location --request POST \"https:\/\/create-order-api-oauth-2.us-e2.cloudhub.io\/api\/create-order\" --header \"Authorization: Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q\" --header \"Content-Type: application\/json\" --data-raw \"{  \"orderId\": \"1234\",  \"orderDate\": \"2020-03-22\",  \"purchaseAmount\": \"150.00\",  \"currencyCode\": \"USD\",  \"customerName\": \"Nick Rimando\",  \"customerAddress\": \"California\",  \"customerMobile\": \"9717395464\"}\""
           },
           {
             "lang": "Java",
@@ -112,7 +112,7 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request GET 'https:\/\/create-order-api-oauth-2.us-e2.cloudhub.io\/api\/get-order\/1234' --header 'Authorization: Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q' --header 'Content-Type: application\/json' "
+            "source": "curl --location --request GET \"https:\/\/create-order-api-oauth-2.us-e2.cloudhub.io\/api\/get-order\/1234\" --header \"Authorization: Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q\" --header \"Content-Type: application\/json\" "
           },
           {
             "lang": "Java",
@@ -187,7 +187,7 @@
         "x-code-samples": [
           {
             "lang": "Curl",
-            "source": "curl --location --request GET 'https://create-order-api-oauth-2.us-e2.cloudhub.io/api/get-orders' --header 'Authorization: Bearer Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q' --header 'Content-Type: application\/json'"
+            "source": "curl --location --request GET \"https://create-order-api-oauth-2.us-e2.cloudhub.io/api/get-orders\" --header \"Authorization: Bearer pnL5_uUlSbW11wQfCih-4nBSauE_dYc5w_38IEADeN_kprD9geKVRulFtCMmgSO9BIFztojgn0AWwnFPgfdI5Q\" --header \"Content-Type: application\/json\""
           },
           {
             "lang": "Java",
