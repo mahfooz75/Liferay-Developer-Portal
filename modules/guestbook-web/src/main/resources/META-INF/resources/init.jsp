@@ -8,7 +8,7 @@
 <%@taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 <% 
-com.liferay.portal.kernel.util.PortalUtil.setPageTitle("XPO", request); 
+com.liferay.portal.kernel.util.PortalUtil.setPageTitle("IRIS", request); 
 %>
 
 <liferay-theme:defineObjects />

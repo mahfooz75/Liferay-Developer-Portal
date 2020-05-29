@@ -11,7 +11,7 @@ div#reddocContainer {
 }
 
 #footer{
-	padding: 10px;
+	padding: 3px;
 	max-width: 1250px;
     margin: 0 auto;
     margin-bottom:5px;
@@ -53,9 +53,18 @@ div#swagger-ui, div#reddocContainer {
 .navbar-collapse {
     color: #e7e7ed;
     background: #30313f;
+    max-width: 1280px;
     /*background: #131301;
     background: #103ee7;
     background: #dd2020;*/
+}
+
+.text-white {
+    color: #30313f !important;
+}
+
+.text-md-left{
+	color: #30313f !important;
 }
 
 /* On mouse-over, add a deeper shadow */

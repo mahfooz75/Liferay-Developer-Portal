@@ -14,7 +14,7 @@
 					<portlet:param name="id" value="${result.id}"></portlet:param>
 					<portlet:param name="assetId" value="${result.assetId}"></portlet:param>
 			</portlet:renderURL>
-			<div class="col-md-4 mb-3">
+			<div class="col-md-6 mb-3">
 				<div class="card h-100">
 					<div class="container">
 						<div class="card-body">

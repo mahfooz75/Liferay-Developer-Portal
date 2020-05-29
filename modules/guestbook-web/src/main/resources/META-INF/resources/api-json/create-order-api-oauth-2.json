@@ -12,7 +12,7 @@
   "tags": [
     {
       "name": "Authentication",
-      "description": "XPO Logistics uses OAuth 2.0 client credentials to secure access to the API endpoints. The Client Credentials grant type can be used by clients to obtain an access token outside of the context of a user. Request for a bearer token using the oAuth client credentials and x-api-key provided by XPO.\n\n<img src=\"/o/com.liferay.docs.guestbook.portlet/images/auth_token_flow.png\" alt=\"Authorization Flow Diagram\">"
+      "description": "IRIS Software uses OAuth 2.0 client credentials to secure access to the API endpoints. The Client Credentials grant type can be used by clients to obtain an access token outside of the context of a user. Request for a bearer token using the oAuth client credentials and x-api-key provided by IRIS.\n\n<img src=\"/o/com.liferay.docs.guestbook.portlet/images/auth_token_flow.png\" alt=\"Authorization Flow Diagram\">"
     }
   ],
   "paths": {
